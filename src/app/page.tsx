@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CategoryGrid from "@/components/CategoryGrid";
+import CollectionShowcase from "@/components/CollectionShowcase";
 import SplitEditorial from "@/components/SplitEditorial";
 import NewArrivals from "@/components/NewArrivals";
 import Craftsmanship from "@/components/Craftsmanship";
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <CategoryGrid />
+      <CollectionShowcase />
       <SplitEditorial />
       <NewArrivals />
       <FeaturedMasterpieces />

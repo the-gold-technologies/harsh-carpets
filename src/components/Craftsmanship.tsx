@@ -74,8 +74,8 @@ export default function Craftsmanship() {
             Every knot tells a story of generations. Our master weavers in the heart of India dedicate months, sometimes years, to crafting a single masterpiece. From hand-spinning the finest wool and silk to the painstaking natural dyeing process, we preserve the soul of traditional carpet making.
           </p>
           
-          <button className="cursor-pointer bg-brand border border-brand text-surface px-8 py-4 uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-transparent hover:text-brand transition-all duration-500">
-            Discover Our Process
+          <button className="btn-sweep cursor-pointer bg-transparent border border-brand text-brand px-8 py-4 uppercase tracking-[0.2em] text-[10px] font-bold hover:text-surface transition-colors duration-500">
+            Watch the Process
           </button>
         </div>
 

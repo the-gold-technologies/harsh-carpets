@@ -7,39 +7,62 @@ import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const CATEGORIES = [
+  {
+    id: "modern",
+    title: "Modern",
+    subtitle: "Rugs",
+    image: "/design-assets/modern_generated.png",
+    link: "/category/modern",
+  },
+  {
+    id: "transitional",
+    title: "Transitional",
+    subtitle: "Rugs",
+    image: "/design-assets/transitional_generated.png",
+    link: "/category/transitional",
+  },
+  {
+    id: "traditional",
+    title: "Traditional",
+    subtitle: "Rugs",
+    image: "/design-assets/traditional_generated.png",
+    link: "/category/traditional",
+  },
+];
+
 export default function CategoryGrid() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        ".collection-img",
-        { y: 100, opacity: 0 },
+        ".collection-header",
+        { x: -30, opacity: 0 },
         {
-          y: 0,
+          x: 0,
           opacity: 1,
           duration: 1.5,
-          stagger: 0.2,
           ease: "power3.out",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 75%",
+            start: "top 80%",
           },
         }
       );
       
       gsap.fromTo(
-        ".collection-text",
-        { y: 30, opacity: 0 },
+        ".pillar-card",
+        { x: 50, opacity: 0 },
         {
-          y: 0,
+          x: 0,
           opacity: 1,
-          duration: 1.5,
-          stagger: 0.2,
+          duration: 1.2,
+          stagger: 0.15,
           ease: "power3.out",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 75%",
+            start: "top 80%",
           },
         }
       );
@@ -48,75 +71,55 @@ export default function CategoryGrid() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 bg-background w-full">
-      <div className="max-w-[90rem] mx-auto px-6 md:px-12 lg:px-24">
+    <section ref={containerRef} className="py-12 md:py-16 bg-background w-full overflow-hidden">
+      <div className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-24">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-24">
-          <div className="collection-text">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-8 h-[1px] bg-secondary"></div>
-              <span className="uppercase tracking-[0.3em] text-[10px] font-medium text-primary/70">Curated Categories</span>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-serif text-primary tracking-wide">The Heritage <br/> Collection.</h2>
-          </div>
-          <Link href="/collections" className="cursor-pointer collection-text hidden md:inline-flex items-center justify-center border border-brand text-brand px-8 py-4 uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-brand hover:text-surface transition-all duration-500">
-            View All Collections
-          </Link>
-        </div>
-        
-        {/* Asymmetrical Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+        {/* Split Layout Container */}
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
           
-          {/* Main Large Item */}
-          <Link href="/category/persian" className="collection-img lg:col-span-7 group block relative overflow-hidden h-[60vh] lg:h-[85vh]">
-            <Image 
-              src="/design-assets/rug-persian.png" 
-              alt="Persian Rugs" 
-              fill 
-              className="object-cover transition-transform duration-1000 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/40 transition-colors duration-700" />
-            <div className="absolute bottom-10 left-10 text-surface">
-              <h3 className="font-serif text-3xl md:text-5xl mb-2">Persian</h3>
-              <p className="text-[10px] tracking-[0.2em] uppercase opacity-80 group-hover:opacity-100 transition-opacity">Explore Category</p>
+          {/* Left: Header Section */}
+          <div className="w-full lg:w-[25%] flex flex-col items-start collection-header">
+            <div className="flex items-center gap-4 mb-4">
+              <span className="uppercase tracking-[0.25em] text-[11px] font-semibold text-brand">Curated Categories</span>
             </div>
-          </Link>
-
-          {/* Right Column Stack */}
-          <div className="lg:col-span-5 flex flex-col gap-8 lg:gap-16 h-full">
-            
-            <Link href="/category/modern" className="collection-img group block relative overflow-hidden h-[40vh] lg:h-[40vh]">
-              <Image 
-                src="/design-assets/texture.png" 
-                alt="Modern Rugs" 
-                fill 
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/30 transition-colors duration-700" />
-              <div className="absolute bottom-8 left-8 text-surface">
-                <h3 className="font-serif text-2xl md:text-3xl mb-2">Modern Handloom</h3>
-                <p className="text-[9px] tracking-[0.2em] uppercase opacity-70">Explore Category</p>
-              </div>
-            </Link>
-
-            <Link href="/category/transitional" className="collection-img group block relative overflow-hidden h-[40vh] lg:h-[40vh]">
-              <Image 
-                src="/design-assets/hero.png" 
-                alt="Transitional Rugs" 
-                fill 
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/40 transition-colors duration-700" />
-              <div className="absolute bottom-8 left-8 text-surface">
-                <h3 className="font-serif text-2xl md:text-3xl mb-2">Transitional</h3>
-                <p className="text-[9px] tracking-[0.2em] uppercase opacity-80">Explore Category</p>
-              </div>
-            </Link>
-
+            <h2 className="text-4xl lg:text-5xl font-serif text-primary tracking-wide mb-4 leading-tight">
+              Our Signature Styles.
+            </h2>
+            <p className="text-primary/70 font-light text-base lg:text-md leading-relaxed max-w-sm">
+              Explore our three distinct categories of handmade luxury rugs, designed for every space.
+            </p>
           </div>
+          
+          {/* Right: 3-Column Grid */}
+          <div className="w-full lg:w-[75%] mt-8 lg:mt-0">
+            {/* Mobile: Horizontal scroll snapping | Desktop: 3-column grid */}
+            <div className="flex overflow-x-auto md:overflow-visible md:grid md:grid-cols-3 gap-6 md:gap-8 pb-6 md:pb-0 snap-x snap-mandatory scrollbar-hide">
+              {CATEGORIES.map((category) => (
+                <Link 
+                  href={category.link}
+                  key={category.id}
+                  className="pillar-card group flex flex-col items-center text-center flex-none w-[65vw] sm:w-[40vw] md:w-auto snap-center"
+                >
+                  {/* Image Container */}
+                  <div className="relative w-full aspect-square overflow-hidden rounded-md mb-4 shadow-sm border border-primary/5">
+                    <Image 
+                      src={category.image} 
+                      alt={category.title} 
+                      fill 
+                      className="object-cover transition-transform duration-[2s] ease-out group-hover:scale-110"
+                    />
+                  </div>
+                  
+                  {/* Text Outside Image */}
+                  <h3 className="text-primary font-serif text-2xl tracking-wide group-hover:text-brand transition-colors duration-300">
+                    {category.title} {category.subtitle}
+                  </h3>
+                </Link>
+              ))}
+            </div>
+          </div>
+          
         </div>
-        
       </div>
     </section>
   );

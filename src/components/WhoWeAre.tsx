@@ -31,8 +31,8 @@ export default function WhoWeAre() {
             For over three generations, Harsh Carpets has stood as a guardian of the ancient Indian hand-knotting tradition, commissioning timeless pieces of floor art that bridge the gap between historical craftsmanship and contemporary design.
           </p>
           
-          <button className="cursor-pointer border border-brand text-brand px-6 py-3 uppercase tracking-[0.2em] text-[9px] font-bold hover:bg-brand hover:text-surface transition-all duration-500">
-            Discover Our Story
+          <button className="btn-sweep cursor-pointer border border-brand text-brand px-6 py-3 uppercase tracking-[0.2em] text-[9px] font-bold hover:text-surface transition-colors duration-500">
+            Read Our Story
           </button>
         </div>
 
