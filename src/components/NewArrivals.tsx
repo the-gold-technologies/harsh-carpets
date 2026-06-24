@@ -78,7 +78,7 @@ export default function NewArrivals() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-20 md:py-28 bg-background w-full overflow-hidden">
+    <section ref={containerRef} className="py-20 md:py-28 bg-white w-full overflow-hidden">
       <div className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-24">
         
         {/* Header Section */}

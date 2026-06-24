@@ -4,10 +4,12 @@ import CategoryGrid from "@/components/CategoryGrid";
 import CollectionShowcase from "@/components/CollectionShowcase";
 import SplitEditorial from "@/components/SplitEditorial";
 import NewArrivals from "@/components/NewArrivals";
-import Craftsmanship from "@/components/Craftsmanship";
 import FeaturedMasterpieces from "@/components/FeaturedMasterpieces";
-import WhoWeAre from "@/components/WhoWeAre";
+import OurServices from "@/components/OurServices";
+import BrandVideo from "@/components/BrandVideo";
 import Footer from "@/components/Footer";
+import WhoWeAre from "@/components/WhoWeAre";
+import HappyCustomers from "@/components/HappyCustomers";
 
 export default function Home() {
   return (
@@ -19,8 +21,10 @@ export default function Home() {
       <SplitEditorial />
       <NewArrivals />
       <FeaturedMasterpieces />
-      <Craftsmanship />
-      <WhoWeAre />
+      <OurServices />
+      {/* <WhoWeAre /> */}
+      <HappyCustomers />
+      {/* <BrandVideo /> */}
       <Footer />
     </main>
   );

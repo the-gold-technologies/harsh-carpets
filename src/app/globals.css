@@ -74,7 +74,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var(--color-brand);
+  background-color: var(--sweep-color, var(--color-brand));
   z-index: -1;
   transform: scaleX(0);
   transform-origin: right;
