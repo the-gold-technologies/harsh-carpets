@@ -94,7 +94,7 @@ export default function CategoryGrid() {
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/30 transition-colors duration-700" />
-              <div className="absolute bottom-8 left-8 text-primary group-hover:text-surface transition-colors duration-700">
+              <div className="absolute bottom-8 left-8 text-surface">
                 <h3 className="font-serif text-2xl md:text-3xl mb-2">Modern Handloom</h3>
                 <p className="text-[9px] tracking-[0.2em] uppercase opacity-70">Explore Category</p>
               </div>
